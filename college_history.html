@@ -1,0 +1,163 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>College History</title>
+<link href="css/histroy_style.css" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Roboto:300" rel="stylesheet">
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="js/flaunt.js"></script>
+</head>
+
+<body>
+<!--header-->
+<header> 
+	<a href="index.html"><img src="images/logo.jpg" alt="ITB Logo"></a>
+	
+
+<!--nav-->
+<nav class="nav">
+    <ul class="nav-list">
+        <li class="nav-item">
+            <a href="?=study">Study at ITB</a>
+            <ul class="nav-submenu">
+                <li class="nav-submenu-item">
+                    <a href="courses.html">Courses</a>
+                </li>
+            </ul>
+        </li>
+        <li class="nav-item">
+            <a href="?=about">About ITB</a>
+            <ul class="nav-submenu">
+                <li class="nav-submenu-item">
+                    <a href="introduction.html">Introduction</a>
+                </li>
+                <li class="nav-submenu-item">
+                    <a href="location.html">Our Location</a>
+                </li>
+                <li class="nav-submenu-item">
+                    <a href="contact.html">Contact Us</a>
+				</li>
+            </ul>
+        </li>
+        <li class="nav-item">
+            <a href="?=history">History</a>
+			<ul class="nav-submenu">
+				<li class="nav-submenu-item">
+					<a href="college_history.html">History of ITB</a>
+				</li>
+				<li class="nav-submenu-item">
+					<a href="area_history.html">History of Local Area</a>
+        </li>
+	</ul>
+		<li class="nav-item">
+            <a href="?=ecology">Ecology</a>
+            <ul class="nav-submenu">
+                <li class="nav-submenu-item">
+                    <a href="ecology.html">Ecology Introduction</a>
+		</li> 
+	</ul>
+		<li class="nav-item">
+	        <a href="?=facilities">Facilities</a>
+			<ul class="nav-submenu">
+			    <li class="nav-submenu-item">
+				    <a href="facilities.html">ITB Facilities</a>
+			</li>
+		</ul>
+		</li>
+		</li>
+	    </li>
+	</ul>
+</nav>
+<!-- /Nav -->
+</header>
+<!--/header--> 
+<!--hero-->
+<div class="slideshow-container">
+  <div class="mySlides fade">
+	 <img src="images/itb_1.jpg" style="width: 100%" alt="image">
+  </div>
+	
+  <div class="mySlides fade">
+	<img src="images/itb_2.jpg" style="width: 100%" alt="image">
+  </div>
+	
+  <div class="mySlides fade">
+	  <img src="images/itb_3.jpg" style="width: 100%" alt="images">
+  </div>
+				
+  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+</div>
+<br>
+
+<div style="text-align:center">
+  <span class="dot" onclick="currentSlide(1)"></span> 
+  <span class="dot" onclick="currentSlide(2)"></span> 
+  <span class="dot" onclick="currentSlide(3)"></span> 
+</div>
+<!--/hero-->
+<p>The Institute of Technology, Blanchardstown was established in 1999. <strong>"If you're a risk taker, join us!"</strong> These words were the first words said when the Institute was first looking for students.<br> A 75 million euro investment that had planned out a bright futher for itself to continue to serve its students and the community. By meeting the skills needs in the economy and increasing the level <br> of participation in higher education and training, particularly in Dublin North-West and its environs. Eager to expand, the Institute opened it's marketing unit a few years after opening in 2006.<br> 2006 the same year another massive change took place, the logo changed for the first time.</p>
+<img src="images/old_logo.png" alt="ITB Old Logo">
+<img src="images/logo.jpg" alt="ITB Logo">
+
+
+<!--footer-->
+<footer>
+    <nav>
+        <ul>
+			<p>Institute of Technology Blanchardstown,<br> Blanchardstown Road North, Dublin 15,D15 YV78<br>Tel: +353 (1) 8851000 <br> Fax: +353 (1) 8851001</p>
+			<p>Follow us on:
+            <li><a href="http:www.instagram.com/itbdublin/"><img src="images/instagram_logo.png" alt="Instagram Logo"/></a></li>
+            <li><a href="http:www.twitter.com/itbdublin/"><img src="images/twitter_logo.png" alt="Twitter Logo"/></a></li></p>
+        </ul>
+    </nav>
+</footer>
+<!--/footer-->
+<script>
+var myIndex = 0;
+carousel();
+
+function carousel() {
+    var i;
+    var x = document.getElementsByClassName("mySlides");
+    for (i = 0; i < x.length; i++) {
+       x[i].style.display = "none";  
+    }
+    myIndex++;
+    if (myIndex > x.length) {myIndex = 1}    
+    x[myIndex-1].style.display = "block";  
+    setTimeout(carousel, 8000);    
+}
+</script>
+<script>
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+}
+</script>
+
+</body>
+</html>
